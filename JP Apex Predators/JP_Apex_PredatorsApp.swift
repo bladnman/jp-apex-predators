@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct JP_Apex_PredatorsApp: App {
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.dark)
         }
     }
 }
