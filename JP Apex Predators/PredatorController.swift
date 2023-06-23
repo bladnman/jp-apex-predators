@@ -11,10 +11,17 @@ class PredatorController {
     var apexPredators: [ApexPredator] = []
     private var allPredators: [ApexPredator] = []
     let typeFilters = ["All", "Land", "Air", "Sea"]
+    var movieFilters: [String] = ["Any"]
 
     init() {
         decodeApexPredatorData()
         apexPredators = allPredators
+
+        // set up the unique movie list
+        let moviesSet: Set<String> = ["Any"]
+        movieFilters = allPredators.reduce(moviesSet) { result, predator in
+            result.union(predator.movies)
+        }.sorted()
     }
 
     func decodeApexPredatorData() {
@@ -45,12 +52,22 @@ class PredatorController {
         }
     }
 
-    func filterBy(type: String) {
-        switch type {
-        case "Land", "Air", "Sea":
-            apexPredators = allPredators.filter { $0.type.lowercased() == type.lowercased() }
-        default:
-            apexPredators = allPredators
+    func filterData(typeFilter: String, movieFilter: String) {
+        // start with all
+        apexPredators = allPredators
+
+        // TYPE
+        if ["Land", "Air", "Sea"].contains(typeFilter) {
+            apexPredators = apexPredators.filter {
+                $0.type.lowercased() == typeFilter.lowercased()
+            }
+        }
+
+        // MOVIE
+        if movieFilter != "Any" {
+            apexPredators = apexPredators.filter {
+                $0.movies.contains(movieFilter)
+            }
         }
     }
 

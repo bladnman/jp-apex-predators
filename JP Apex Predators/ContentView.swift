@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
     let apController = PredatorController()
     @State var sortAlphabetically = false
-    @State var currentFilter = "All"
+    @State var currentTypeFilter = "All"
+    @State var currentMovieFilter = "Any"
 
     var body: some View {
-        apController.filterBy(type: currentFilter)
+        apController.filterData(typeFilter: currentTypeFilter,
+                                movieFilter: currentMovieFilter)
 
         if sortAlphabetically {
             apController.sortByAlphabetical()
@@ -38,16 +40,16 @@ struct ContentView: View {
                         }
                     } label: {
                         if sortAlphabetically {
-                            Image(systemName: "film")
+                            Image(systemName: "list.number")
                         } else {
-                            Image(systemName: "textformat")
+                            Image(systemName: "textformat.abc")
                         }
                     }
                 }
 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        Picker("Filter", selection: $currentFilter.animation()) {
+                        Picker("Filter", selection: $currentTypeFilter.animation()) {
                             ForEach(apController.typeFilters, id: \.self) { type in
                                 HStack {
                                     Text(type)
@@ -60,6 +62,17 @@ struct ContentView: View {
                         }
                     } label: {
                         Image(systemName: "slider.horizontal.3")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        Picker("Movies", selection: $currentMovieFilter.animation()) {
+                            ForEach(apController.movieFilters, id: \.self) { movie in
+                                Text(movie)
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "film")
                     }
                 }
             }
