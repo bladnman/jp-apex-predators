@@ -16,6 +16,7 @@
 		419A607D2A4522940031DE8D /* PredatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A607C2A4522940031DE8D /* PredatorController.swift */; };
 		419A607F2A4526C40031DE8D /* PredatorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A607E2A4526C40031DE8D /* PredatorDetails.swift */; };
 		419A60812A4527A80031DE8D /* PredatorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A60802A4527A80031DE8D /* PredatorRow.swift */; };
+		419A60832A45E16A0031DE8D /* CONSTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A60822A45E16A0031DE8D /* CONSTS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		419A607C2A4522940031DE8D /* PredatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorController.swift; sourceTree = "<group>"; };
 		419A607E2A4526C40031DE8D /* PredatorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorDetails.swift; sourceTree = "<group>"; };
 		419A60802A4527A80031DE8D /* PredatorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorRow.swift; sourceTree = "<group>"; };
+		419A60822A45E16A0031DE8D /* CONSTS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONSTS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				419A606C2A451E5F0031DE8D /* ContentView.swift */,
 				419A60802A4527A80031DE8D /* PredatorRow.swift */,
 				419A607E2A4526C40031DE8D /* PredatorDetails.swift */,
+				419A60822A45E16A0031DE8D /* CONSTS.swift */,
 				419A60782A4520F60031DE8D /* jpapexpredators.json */,
 				419A606E2A451E600031DE8D /* Assets.xcassets */,
 				419A60702A451E600031DE8D /* Preview Content */,
@@ -159,6 +162,7 @@
 				419A606D2A451E5F0031DE8D /* ContentView.swift in Sources */,
 				419A606B2A451E5F0031DE8D /* JP_Apex_PredatorsApp.swift in Sources */,
 				419A60812A4527A80031DE8D /* PredatorRow.swift in Sources */,
+				419A60832A45E16A0031DE8D /* CONSTS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
